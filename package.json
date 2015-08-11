@@ -1,0 +1,66 @@
+{
+  "name": "contracts",
+  "version": "0.0.1",
+  "description": "Contracts management -  simple example using redux",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaearon/redux.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "flux",
+    "redux",
+    "crud",
+    "grid",
+    "griddle",
+    "router",
+    "validation",
+    "joi"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaearon/redux/issues"
+  },
+  "homepage": "https://github.com/gaearon/redux#readme",
+  "dependencies": {
+    "babel-runtime": "5.6.15",
+    "bootstrap": "^3.3.5",
+    "classnames": "^2.1.2",
+    "griddle-react": "^0.2.13",
+    "joi": "^6.5.0",
+    "lodash": "^3.10.1",
+    "react": "^0.13.3",
+    "react-mixin": "^1.7.0",
+    "react-router": "1.0.0-beta3",
+    "react-validation-mixin": "^4.2.0",
+    "redux": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel": "5.6.14",
+    "babel-core": "5.6.15",
+    "babel-loader": "5.2.2",
+    "css-loader": "^0.15.6",
+    "file-loader": "^0.8.4",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "node-libs-browser": "^0.5.2",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^1.2.7",
+    "style-loader": "^0.12.3",
+    "todomvc-app-css": "^2.0.1",
+    "webpack": "1.10.0",
+    "webpack-dev-server": "1.10.1"
+  }
+}
