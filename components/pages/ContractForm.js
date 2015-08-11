@@ -39,8 +39,8 @@ export default class ContractForm extends Component {
     //TODO: modify validation for nested properties
     this.validatorTypes = {
       id: Joi.number().required().label('Contract Id'),
-      description: Joi.string().allow(null).label('Description'),
-      finished: Joi.when('description', { is: 'other', then: Joi.boolean().required() }).label('Finished')
+      description: Joi.when('finished', { is: true, then: Joi.string().min(5).max(25).required() }).label('Description'),
+      finished: Joi.boolean().label('Finished')
     }
 
     this.state = this.props.contract ? this.props.contract : this.initialState;
@@ -107,6 +107,7 @@ export default class ContractForm extends Component {
             <div className={this.getClasses('description')}>
               <label htmlFor='description'>Description</label>
               <input type='text' id='description' valueLink={this.linkState('description')} onBlur={this.handleValidation('description')} className='form-control' placeholder='Description' />
+              {this.getValidationMessages('description').map(this.renderHelpText)}
             </div>
             <div className={this.getClasses('finished')}>
               <label htmlFor='finished'>Is finished</label>
