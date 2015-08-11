@@ -42,9 +42,26 @@ export default class MainSection extends Component {
     this.actions = bindActionCreators(ContractActions, this.props.dispatch);
   }
 
+  applySearch(query) {
+    const queryLowerCase = query.trim().toLowerCase();
+    const items = this.props.contracts;
+
+    let result = items;
+
+    if (queryLowerCase) {
+      result = items.filter(c => {
+        return (c.description.toLowerCase().includes(queryLowerCase) ||
+          c.id.toString().toLowerCase().includes(queryLowerCase) ||
+          c.finished.toString().toLowerCase().includes(queryLowerCase))
+      });
+    }
+
+    return result;
+  }
+
   render() {
-    const { contracts , searchTerm } = this.props;
-    const filteredItems = contracts.filter(c => c.description.includes(searchTerm));
+    const { searchTerm } = this.props;
+    const filteredItems = this.applySearch(searchTerm);
 
     return (
       <div>
