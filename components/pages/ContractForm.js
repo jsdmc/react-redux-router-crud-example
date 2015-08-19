@@ -5,7 +5,7 @@ import ValidationMixin from 'react-validation-mixin';
 import Joi from 'joi';
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux'
-import { connect } from 'redux/react'
+import { connect } from 'react-redux'
 import * as ContractActions from '../../actions/ContractActions';
 
 @connect((state, props) => {

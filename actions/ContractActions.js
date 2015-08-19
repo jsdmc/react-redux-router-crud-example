@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes'
-import fakeContracts from '../stores/fakeContracts';
+import fakeContracts from '../reducers/fakeContracts';
 
 export function fetchContracts (options) {
   return dispatch => {

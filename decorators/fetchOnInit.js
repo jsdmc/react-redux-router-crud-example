@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import shallowEqualScalar from 'redux/lib/utils/shallowEqual'
+import shallowEqualScalar from 'react-redux/lib/utils/shallowEqual'
 import { bindActionCreators } from 'redux'
 import * as ContractActions from '../actions/ContractActions';
 

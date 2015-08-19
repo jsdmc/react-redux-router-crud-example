@@ -1,14 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import { Redirect, Router, Route } from 'react-router';
 import App from './App';
-import { createRedux } from 'redux';
-import { Provider } from 'redux/react';
+import { createStore, applyMiddleware } from 'redux';
+
+import thunkMiddleware from 'redux-thunk';
+import loggerMiddleware from 'redux-logger';
+
+import rootReducer from '../reducers';
+import { Provider } from 'react-redux';
 
 import ContractsList from '../components/pages/ContractsList';
 import ContractForm from '../components/pages/ContractForm';
-import * as stores from '../stores';
 
-const redux = createRedux(stores);
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware, // lets us dispatch() functions
+  loggerMiddleware // neat middleware that logs actions
+)(createStore);
+
+const store = createStoreWithMiddleware(rootReducer);
 
 export default class Root extends Component {
   
@@ -20,7 +29,7 @@ export default class Root extends Component {
     const { history } = this.props
 
     return (
-      <Provider redux={redux}>
+      <Provider store={store}>
         {renderRoutes.bind(null, history)}
       </Provider>
     );

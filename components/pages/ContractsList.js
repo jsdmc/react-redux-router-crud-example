@@ -1,5 +1,5 @@
 import React, { Component } from 'react/addons';
-import { connect } from 'redux/react'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as ContractActions from '../../actions/ContractActions';
 
