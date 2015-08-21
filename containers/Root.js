@@ -4,7 +4,7 @@ import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 
 import thunkMiddleware from 'redux-thunk';
-import loggerMiddleware from 'redux-logger';
+import createLogger from 'redux-logger';
 
 import rootReducer from '../reducers';
 import { Provider } from 'react-redux';
@@ -12,9 +12,11 @@ import { Provider } from 'react-redux';
 import ContractsList from '../components/pages/ContractsList';
 import ContractForm from '../components/pages/ContractForm';
 
+const logger = createLogger();
+
 const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware, // lets us dispatch() functions
-  loggerMiddleware // neat middleware that logs actions
+  logger // neat middleware that logs actions
 )(createStore);
 
 const store = createStoreWithMiddleware(rootReducer);
