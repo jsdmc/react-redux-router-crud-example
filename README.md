@@ -32,5 +32,4 @@ Webpack - for bundling
 
 Babel - for writing ES6 code and transpile it to ES5
 
-- https://babeljs.io
-
+- https://babeljs.io 
