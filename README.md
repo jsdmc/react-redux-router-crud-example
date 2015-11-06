@@ -1,6 +1,10 @@
 # react-redux-router-crud-example
 Simple CRUD example build using React, Redux, react-router, webpack
 
+# UPDATED version (not finished)
+
+- https://github.com/jsdmc/react-redux-router-crud-boilerplate
+
 # installation
 
 - npm install
